@@ -1,0 +1,260 @@
+@import "../mixins/breakpoints";
+
+.pre {
+	width: 100%;
+	background: linear-gradient(-45deg, $shjblue, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	-webkit-animation: gradbar 15s ease infinite;
+	-moz-animation: gradbar 15s ease infinite;
+	animation: gradbar 15s ease infinite;
+	color: white;
+	display: flex;
+	justify-content: end;
+	text-transform: uppercase;
+	font-family: $bodyFont;
+	font-weight: 700;
+	font-size: 0.875rem;
+	padding-block: 0.75rem;
+
+	ul {
+		display: none;
+	}
+
+	@include tablet {
+		.pre {
+			height: 5px;
+		}
+		ul {
+			display: flex;
+			gap: 2rem;
+			flex-direction: row;
+			list-style-type: none;
+		}
+	}
+}
+
+.end {
+	display: flex;
+	justify-content: end;
+}
+
+$color_1: #000;
+$color_2: #3498db;
+$background-color_1: #fff;
+$background-color_2: #3f3f3f;
+
+/* Mobile Devices - Phones/Tablets */
+/* MOBILE NAVIGATION */
+.page-wrapper {
+	width: 100%;
+	height: auto;
+}
+
+.navbar {
+	align-items: center;
+	height: 75px;
+	background-color: rgba(255, 255, 255, 80);
+	color: black;
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	font-family: $main-heading-font;
+	font-weight: 700;
+	font-size: 1.25rem;
+
+	.main-logo {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 2rem;
+		position: relative;
+
+		.logo-background {
+			background-color: white;
+			flex-shrink: 0;
+			display: flex;
+			padding: 1.5rem;
+			border-radius: 2rem;
+			-webkit-box-shadow: 0px 29px 55px -4px rgba(0, 0, 0, 0.2);
+			-moz-box-shadow: 0px 29px 55px -4px rgba(0, 0, 0, 0.2);
+			box-shadow: 0px 29px 55px -4px rgba(0, 0, 0, 0.2);
+
+			img {
+				width: 6rem;
+			}
+		}
+
+		.wordmark {
+			z-index: 2;
+			flex-shrink: 0;
+
+			img {
+				width: 7rem;
+			}
+		}
+
+		@include tablet {
+			.logo-background img {
+				width: 6rem;
+				padding: 0.5rem;
+			}
+			.wordmark {
+				img {
+					width: 6rem;
+				}
+			}
+		}
+
+		@include desktop {
+			.logo-background img {
+				width: 8rem;
+				padding: 0.5rem;
+			}
+			.wordmark {
+				img {
+					width: 9rem;
+				}
+			}
+		}
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		gap: 2rem;
+		justify-self: end;
+
+		@include desktop {
+			gap: 1.5rem;
+			text-align: center;
+			line-height: 1.2rem;
+		}
+	}
+}
+.nav-item {
+	a {
+		color: $color_1;
+		text-transform: uppercase;
+		font-family: $main-heading-font;
+		font-weight: 700;
+		font-size: 1.25rem;
+		text-decoration: none;
+		transition: color 0.3s ease-out;
+		&:hover {
+			color: $color_2;
+		}
+	}
+}
+
+.menu-toggle {
+	justify-self: end;
+	margin-right: 25px;
+	display: none;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	.bar {
+		width: 25px;
+		height: 3px;
+		background-color: $background-color_2;
+		margin: 5px auto;
+		-webkit-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+	}
+}
+#mobile-menu.is-active {
+	.bar {
+		&:nth-child(2) {
+			opacity: 0;
+		}
+		&:nth-child(1) {
+			-webkit-transform: translateY(8px) rotate(45deg);
+			-ms-transform: translateY(8px) rotate(45deg);
+			-o-transform: translateY(8px) rotate(45deg);
+			transform: translateY(8px) rotate(45deg);
+		}
+		&:nth-child(3) {
+			-webkit-transform: translateY(-8px) rotate(-45deg);
+			-ms-transform: translateY(-8px) rotate(-45deg);
+			-o-transform: translateY(-8px) rotate(-45deg);
+			transform: translateY(-8px) rotate(-45deg);
+		}
+	}
+}
+@media only screen and (max-width: $tablet-md) {
+	.navbar {
+		ul {
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			justify-content: start;
+			top: 55px;
+			background-color: $background-color_1;
+			width: 100%;
+			height: calc(100vh - 55px);
+			transform: translate(-105%);
+			text-align: center;
+			overflow: hidden;
+		}
+
+		li {
+			padding: 15px;
+
+			&:first-child {
+				margin-top: 50px;
+			}
+
+			a {
+				font-size: 1rem;
+			}
+		}
+	}
+	.menu-toggle {
+		display: block;
+		cursor: pointer;
+	}
+	.bar {
+		display: block;
+		cursor: pointer;
+	}
+	.mobile-nav {
+		transform: translate(0%) !important;
+	}
+}
+
+@-webkit-keyframes gradbar {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@-moz-keyframes gradbar {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes gradbar {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

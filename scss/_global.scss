@@ -1,0 +1,45 @@
+@import "typography";
+
+body {
+	font-family: $bodyFont;
+}
+
+.btn {
+	cursor: pointer;
+	margin: 0.5rem;
+	padding: 0.5rem 1.75rem 0.25rem;
+	font-family: $btnFont;
+	font-size: 1.25rem;
+	font-weight: bold;
+	letter-spacing: 0.15rem;
+	text-transform: uppercase;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.25);
+	border: 2px solid white;
+	border-radius: 0.5rem;
+
+	&.inverse {
+		background-color: white;
+		color: black;
+	}
+
+	&.formSubmit {
+		background-color: $shjblue;
+		color: white;
+	}
+
+	&:hover {
+		background-color: lighten(black, 5%);
+	}
+
+	&:focus {
+		outline: 1px dashed yellow;
+		outline-offset: 3px;
+	}
+}
+
+.container {
+	width: 90%;
+	max-width: 1500px;
+	margin: auto;
+}

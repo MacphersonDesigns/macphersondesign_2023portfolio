@@ -1,0 +1,30 @@
+// BREAKPOINT VARIABLES
+// ==============================
+$phone-sm: 425px;
+$tablet-md: 768px;
+$desktop-lg: 1024px;
+$desktop-xl: 1440px;
+
+@mixin phone {
+	@media (min-width: $phone-sm) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: $tablet-md) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $desktop-lg) {
+		@content;
+	}
+}
+
+@mixin desktop-xl {
+	@media (min-width: $desktop-xl) {
+		@content;
+	}
+}

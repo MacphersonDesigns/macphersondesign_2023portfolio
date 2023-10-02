@@ -1,0 +1,130 @@
+footer {
+	background: url(../../assets/images/marblebg.jpg);
+	background-position: top center;
+	background-size: cover;
+	color: black;
+	padding-block: 3rem;
+	align-items: center;
+	display: flex;
+	gap: 2rem;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		@include tablet {
+			flex-direction: row;
+		}
+
+		.left {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+
+			h2 {
+				color: $shjblue;
+
+				small {
+					color: black;
+					font-family: $bodyFont;
+					font-size: 1.5625rem;
+					text-transform: uppercase;
+					display: block;
+					font-weight: 900;
+					letter-spacing: 0.1rem;
+				}
+			}
+		}
+
+		.right {
+			border-left: 0.875rem solid $shjblue;
+			padding-left: 1rem;
+
+			h2 {
+				color: $shjblue;
+			}
+		}
+	}
+}
+
+.copyright {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	background-color: black;
+	gap: 1rem;
+	text-align: center;
+
+	@include tablet {
+		text-align: left;
+		flex-direction: row;
+	}
+
+	p {
+		margin-inline: 1rem;
+	}
+
+	.MacDesigns {
+		padding-inline: 1rem;
+		display: flex;
+		align-items: center;
+		border-left: 0px solid white;
+
+		@include tablet {
+			border-left: 2px solid white;
+		}
+
+		.logo {
+			display: flex;
+			width: 25px;
+			aspect-ratio: 1;
+		}
+
+		p {
+			font-size: x-small;
+
+			a {
+				color: white;
+				text-decoration: none;
+				display: block;
+				font-size: larger;
+				transition: color 350ms;
+
+				&:hover,
+				&:focus {
+					color: #2896cb;
+				}
+			}
+		}
+	}
+}
+
+.quoteForm {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+
+	.field {
+		width: 100%;
+	}
+}
+
+.fg50 {
+	flex: 1 0 45%;
+}
+
+.fg100 {
+	flex: 1 0 100%;
+}
