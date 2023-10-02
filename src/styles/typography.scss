@@ -1,0 +1,50 @@
+@font-face {
+	font-family: "Liberator";
+	src: url("/fonts/liberator/Liberator.woff2") format("woff2"),
+		url("/fonts/liberator/Liberator.woff") format("woff"),
+		url("/fonts/liberator/Liberator.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@function theme-scale($scale) {
+	@return map-get($scales, $scale);
+}
+
+$scales: (
+	"minor-second": 1.067,
+	"major-second": 1.125,
+	"minor-third": 1.2,
+	"major-third": 1.25,
+	"perfect-fourth": 1.333,
+	"augmented-fourth": 1.414,
+	"perfect-fifth": 1.5,
+	"golden-ratio": 1.618,
+);
+
+$prop: theme-scale("minor-third");
+$base-size: 16px;
+$mobile-base-size: 14px;
+$tablet-base-size: 16px;
+$lead-size: 1rem * $prop;
+$max-heading: 6;
+$body-font: "Inter", sans-serif;
+$main-heading-font: "Liberator", sans-serif;
+$mobile-padding: 2rem;
+
+@function pow($number, $exponent) {
+	$value: 1;
+
+	@if $exponent > 0 {
+		@for $i from 1 through $exponent {
+			$value: $value * $number;
+		}
+	}
+
+	@return $value;
+}
+
+@function heading-level($level) {
+	@return $lead-size * pow($prop, 7 - $level);
+}

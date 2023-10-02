@@ -1,0 +1,54 @@
+.copyright {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: black;
+  gap: 1rem;
+  text-align: center;
+
+  @include tablet {
+    text-align: left;
+    flex-direction: row;
+  }
+
+  p {
+    margin-inline: 1rem;
+  }
+
+  .MacDesigns {
+    padding-inline: 1rem;
+    display: flex;
+    align-items: center;
+    border-left: 0px solid white;
+
+    @include tablet {
+      border-left: 2px solid white;
+    }
+
+    .logo {
+      display: flex;
+      width: 25px;
+      aspect-ratio: 1;
+    }
+
+    p {
+      font-size: x-small;
+
+      a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        font-size: larger;
+        transition: color 350ms;
+
+        &:hover,
+        &:focus {
+          color: #2896cb;
+        }
+      }
+    }
+  }
+}

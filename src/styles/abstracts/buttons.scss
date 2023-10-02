@@ -1,0 +1,41 @@
+.btn {
+	cursor: pointer;
+	margin: 0.5rem;
+	padding: 0.5rem 1.75rem 0.25rem;
+	font-family: $btnFont;
+	font-size: 1.25rem;
+	font-weight: bold;
+	letter-spacing: 0.15rem;
+	text-transform: uppercase;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.25);
+	border: 2px solid white;
+	border-radius: 0.5rem;
+	transition: background-color 350ms ease, color 350ms ease;
+
+	&.inverse {
+		background-color: white;
+		color: black;
+
+		&:hover,
+		&:focus {
+			background-color: $shjblue;
+			color: white;
+		}
+	}
+
+	&.formSubmit {
+		background-color: $shjblue;
+		color: white;
+	}
+
+	&:hover {
+		background-color: white;
+		color: $shjblue;
+	}
+
+	&:focus {
+		outline: 1px dashed $shjblue;
+		outline-offset: 3px;
+	}
+}

@@ -1,0 +1,11 @@
+@import "mixins/breakpoints";
+@import "variables";
+@import "typography";
+@import "abstracts/forms";
+@import "abstracts/buttons";
+
+.container {
+	width: 90%;
+	max-width: 1500px;
+	margin: auto;
+}
